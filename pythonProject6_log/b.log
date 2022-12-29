@@ -1,0 +1,3 @@
+2022-12-13 15:33:00,677 INFO [logging_use.py(<module>:53)] - 我是一个调试级别的日志
+2022-12-13 15:38:36,377 INFO [logging_use.py(<module>:53)] - 我是一个调试级别的日志
+2022-12-13 15:38:54,850 ERROR [logging_use.py(<module>:53)] - 我是一个调试级别的日志

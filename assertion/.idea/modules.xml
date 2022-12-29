@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../AutoFramerIHRM/.idea/AutoFramerIHRM.iml" filepath="$PROJECT_DIR$/../AutoFramerIHRM/.idea/AutoFramerIHRM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../RequestTest/.idea/RequestTest.iml" filepath="$PROJECT_DIR$/../RequestTest/.idea/RequestTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/assertion.iml" filepath="$PROJECT_DIR$/.idea/assertion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../homework5/.idea/homework5.iml" filepath="$PROJECT_DIR$/../homework5/.idea/homework5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../pythonProject6_log/.idea/pythonProject6_log.iml" filepath="$PROJECT_DIR$/../pythonProject6_log/.idea/pythonProject6_log.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tpshopUtil/.idea/tpshopUtil.iml" filepath="$PROJECT_DIR$/../tpshopUtil/.idea/tpshopUtil.iml" />
+    </modules>
+  </component>
+</project>

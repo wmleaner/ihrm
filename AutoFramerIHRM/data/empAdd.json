@@ -1,0 +1,7 @@
+[
+  {"desc":"已注册手机，添加失败","login":{"username":"u111","mobile": "13800000002","workNumber":"123456"},"is_success":false,"code": 20002,"message": "新增员工失败"},
+    {"desc":"正确填写全部必选，添加失败","login":{"username":"u211","mobile": "13921576530","workNumber": "123456"},"is_success": true,"code": 20002,"message": "新增员工失败"},
+    {"desc":"全部必选+部分选择，添加成功","login":{"username":"u311","mobile": "13921576541","workNumber": "123456","timeOfEntry":"2017-11-03"},"is_success": true,"code": 10000,"message": "操作成功！"},
+    {"desc":"转正时间比入职早，添加失败","login":{"username":"u411","mobile": "13921576513","workNumber": "123456","timeOfEntry":"2017-11-03","correctionTime":"2001-06-07"},"is_success": false,"code": 20002,"message": "新增员工失败"}
+
+]

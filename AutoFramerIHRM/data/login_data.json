@@ -1,0 +1,13 @@
+
+  [
+    {"desc":"登录成功","login":{"mobile": "13800000002","password":"123456"},"is_success":true,"code": 10000,"message": "操作成功！"},
+    {"desc":"未注册手机","login":{"mobile": "10800000002","password": "123456"},"is_success": false,"code": 20001,"message": "用户名或密码错误"},
+    {"desc":"10手机号","login":{"mobile": "1380000002","password": "123456"},"is_success": false,"code": 20001,"message": "用户名或密码错误"},
+    {"desc":"12手机号","login":{"mobile": "138000000002","password": "123456"},"is_success": false,"code": 20001,"message": "用户名或密码错误"},
+    {"desc":"手机含有字母","login":{"mobile": "1380000w002","password": "123456"},"is_success": false,"code": 20001,"message": "用户名或密码错误"},
+    {"desc":"手机含有字符","login":{"mobile": "1380000@002","password": "123456"},"is_success": false,"code": 20001,"message": "用户名或密码错误"},
+    {"desc":"手机为空","login":{"mobile": null,"password": "123456"},"is_success":false,"code":20001,"message": "用户名或密码错误"},
+    {"desc":"密码为空","login":{"mobile": "13800000002","password": null},"is_success": false,"code": 20001,"message": "用户名或密码错误"},
+    {"desc":"少参","login":{"mobile": "13800000002"},"is_success": false,"code": 20001,"message": "用户名或密码错误"},
+    {"desc":"多参","login":{"mobile": "13800000002","password": "123456","vofiy": "8888"},"is_success": true,"code": 10000,"message": "操作成功！"}
+]

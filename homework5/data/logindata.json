@@ -1,0 +1,5 @@
+[
+  {"desc": "正确的用户名和密码","username":"admin","pwd":"123456","msg": "登录成功"},
+  {"desc": "不存在的用户名","username":"root","pwd":"123456","msg": "登录成功"},
+  {"desc": "错误的密码","username":"admin","pwd":"123456","msg": "登录成功"},
+  {"desc": "错误的验证码","username":"admin","pwd":"123456","msg": "登录成功"}]
