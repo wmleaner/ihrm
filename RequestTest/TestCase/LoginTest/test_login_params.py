@@ -2,7 +2,7 @@ import unittest
 
 from parameterized import parameterized
 from Common.assertion import assertionuse
-from testModul.LoginApi import LoginObj
+from api.LoginApi import LoginObj
 from Common.readFile import read_json
 import requests
 
@@ -27,16 +27,13 @@ class TestLogincase(unittest.TestCase):
         cls.session=requests.Session()
 
     @parameterized.expand(read_json())
-    def test_login(cls,desc,username,password,expected):#本来就是cls而已，参数化就要修改为与参数对应
-        login_resp=LoginObj.loginapi(cls.session,'http://ihrm2-test.itheima.net/api/sys/login',{"mobile":username,"password":password})
+    def test_login(cls,desc,logindata,is_success,code,msg):#本来就是cls而已，参数化就要修改为与参数对应
+        login_resp=LoginObj.loginapi(cls.session,'http://ihrm2-test.itheima.net/api/sys/login',logindata)
         print(login_resp.json())
         # cls.assertEqual('1000',login_resp.json,'cehng')
-        assertionuse(cls,login_resp,expected)#只有True表示真假，true表示字符串
+        assertionuse(cls,login_resp,is_success,code,msg)#只有True表示真假，true表示字符串
 
 
-    # def test_login(cls):#本来就是cls而已，参数化就要修改为与参数对应
-    #     login_resp=LoginObj.loginapi(cls.session,'http://ihrm2-test.itheima.net/api/sys/login',{"mobile":"13800000002","password":"123456"})
-    #     assertionuse(cls,login_resp,True,10000,'操作成功！')#只有True表示真假，true表示字符串
 
 
 

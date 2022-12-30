@@ -10,8 +10,8 @@ import requests
 class LoginObj(object):
 
     @classmethod
-    def loginapi(cls,session,login_url,login_data):
-        resp=session.post(url=login_url,json=login_data)
+    def loginapi(cls,session,login_data):
+        resp=session.post(url='http://ihrm2-test.itheima.net/api/sys/login',json=login_data)
         return resp
 
 '''

@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>登录测试报告2</title>
+    <meta name="generator" content="HTMLTestReport 0.0.1"/>
+    <link rel="stylesheet" href="http://unpkg.com/layui@2.6.8/dist/css/layui.css">
+    
+<style type="text/css">
+    .title { width: auto; height: 60px; text-align: center; font: bolder 38px/60px "Microsoft YaHei UI"; color: #009688; }
+    .summary span { font: normal 16px/38px "Microsoft YaHei UI"; margin-left: 20px; }
+    .success-btn { background-color: #28a745; }
+    .skip-btn { background-color: #84898c; }
+    .passClass  { background-color: #bdedbc; }
+    .failClass  { background-color: #ffefa4; }
+    .errorClass { background-color: #ffc9c9; }
+    .passCase   { color: #5cb85c; }
+    .skipCase   { color: #84898c; }
+    .failCase   { color: #FF6600; font-weight: bold; }
+    .errorCase  { color: #c00; font-weight: bold; }
+    .hiddenRow  { display: none; }
+    .testcase   { margin-left: 2em; }
+    .layui-table tbody tr:hover, .layui-table-click, .layui-table-header, .layui-table-hover, .layui-table-mend, .layui-table-patch, .layui-table-tool, .layui-table[lay-even] tr:nth-child(even) {
+        background-color: transparent;
+    }
+</style>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <script language="javascript" type="text/javascript"><!--
+    output_list = Array();
+    function showCase(level) {
+        trs = document.getElementsByTagName("tr");
+        for (var i = 0; i < trs.length; i++) {
+            tr = trs[i];
+            id = tr.id;
+            if (id.substr(0,2) == 'ft') {
+                if (level == 2 || level == 0) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+            if (id.substr(0,2) == 'pt') {
+                if (level < 2) {
+                    tr.className = 'hiddenRow';
+                }
+                else {
+                    tr.className = '';
+                }
+            }
+        }      
+    }
+    function showClassDetail(cid, count) {
+        var id_list = Array(count);
+        var toHide = 1;
+        for (var i = 0; i < count; i++) {
+            tid0 = 't' + cid.substr(1) + '.' + (i+1);
+            tid = 'f' + tid0;
+            tr = document.getElementById(tid);
+            if (!tr) {
+                tid = 'p' + tid0;
+                tr = document.getElementById(tid);
+            }
+            id_list[i] = tid;
+            if (tr.className) {
+                toHide = 0;
+            }
+        }
+        for (var i = 0; i < count; i++) {
+            tid = id_list[i];
+            if (toHide) {
+                document.getElementById(tid).className = 'hiddenRow';
+            }
+            else {
+                document.getElementById(tid).className = '';
+            }
+        }
+    }
+    function showTestDetail(div_id){
+        var details_div = document.getElementById(div_id)
+        var displayState = details_div.style.display
+        if (displayState == 'block' || displayState == '' ) {
+            details_div.style.display = 'none'
+        }
+        else {
+            displayState = 'block'
+            details_div.style.display = 'block'
+        }
+    }
+    function html_escape(s) {
+        s = s.replace(/&/g,'&amp;');
+        s = s.replace(/</g,'&lt;');
+        s = s.replace(/>/g,'&gt;');
+        return s;
+    }
+    --></script>
+    <div class="layui-container">
+        
+    <!--报告标题-->
+    <div class="title">登录测试报告2</div>
+    
+    <!--汇总信息-->
+    <fieldset class="layui-elem-field summary">
+        <legend>测试结果汇总</legend>
+        <div class="layui-field-box">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="50%">
+                    <col width="50%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <td>
+                            <button type="button" class="layui-btn">开始时间</button>
+                            <span class="text-dark">2022-12-30 11:19:53</span>
+                        </td>
+                        <td>
+                            <button type="button" class="layui-btn">执行时间</button>
+                            <span class="text-dark">0:00:01.158066 s</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" class="layui-btn">用例总数</button>
+                            <span class="text-dark">19</span>
+                        </td>
+                        <td>
+                            <button type="button" class="layui-btn">通过率</button>
+                            <span class="text-dark">94.74%</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button type="button" class="layui-btn">描述信息</button>
+                            <span class="text-dark">登录</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="button" class="layui-btn success-btn">成功用例：18</button>
+                            <button type="button" class="layui-btn layui-btn-warm">失败用例：1</button>
+                            <button type="button" class="layui-btn layui-btn-danger">错误用例：0</button>
+                            <button type="button" class="layui-btn skip-btn">跳过用例：0</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </fieldset>
+    
+    <!--图表展示-->
+    <fieldset class="layui-elem-field summary">
+        <legend>图表展示</legend>
+        <div class="layui-field-box">
+            <div class="char">
+                <div id="chart1" style="width: 49%;height: 400px;float: left"></div>
+                <div id="chart2" style="width: 49%;height: 400px;float: left"></div>
+            </div>
+        </div>
+    </fieldset>
+
+        
+    <fieldset class="layui-elem-field summary">
+        <legend>详细信息</legend>
+        <div class="layui-field-box">
+            <table id='result_table' class="layui-table">
+            <thead>
+                <tr id='header_row' style='background-color: #009688; color: #fff'>
+                    <th>测试用例</th>
+                    <th>总数</th>
+                    <th>通过</th>
+                    <th>失败</th>
+                    <th>错误</th>
+                    <th>跳过</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+				<tbody>
+                
+    <tr class='failClass'>
+        <td class="text-center">TestCase.LoginTest.test_login_params.TestLogincase</td>
+        <td class="text-center">19</td>
+        <td class="text-center">18</td>
+        <td class="text-center">1</td>
+        <td class="text-center">0</td>
+        <td class="text-center">0</td>
+        <td class="text-center"><button type="button" class="layui-btn layui-btn-xs" onclick="showClassDetail('c1',19)">详细</button></td>
+    </tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_00__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.1')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.1' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.1: {'success': True, 'code': 10000, 'message': '操作成功！', 'data': '6d4cfdf4-03a0-41fd-b968-a1267916b499'}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_01__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.2')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.2' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.2: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_02_10_</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.3')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.3' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.3: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_03_12_</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.4')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.4' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.4: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_04__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.5')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.5' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.5: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_05__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.6')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.6' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.6: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_06__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.7')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.7' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.7: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_07__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.8')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.8' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.8: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_08__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.9')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.9' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.9: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_09__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.10')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.10' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.10: {'success': True, 'code': 10000, 'message': '操作成功！', 'data': '89e56fbf-a366-4d59-bde7-fc193cefb09d'}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_10_11_</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.11')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.11' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.11: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_11__1_</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.12')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.12' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.12: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_12__1_2_</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.13')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.13' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.13: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_13__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.14')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.14' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.14: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_14__5_</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.15')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.15' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.15: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_15__21_</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.16')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.16' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.16: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_16__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.17')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.17' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.17: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_login_17__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_pt1.18')">
+        通过</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_pt1.18' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>pt1.18: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft1.19' class=''>
+    <td class='failCase'><div class='testcase'>test_login_18__</div></td>
+    <td>
+    <a onfocus='this.blur();' data-toggle="collapse" href="javascript:showTestDetail('div_ft1.19')">
+        失败</a>
+    </td>
+    <td colspan='5'>
+    <div id='div_ft1.19' class="collapse in">
+        <blockquote class="layui-elem-quote">
+            <pre>ft1.19: {'success': False, 'code': 20001, 'message': '用户名或密码错误', 'data': None}
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\parameterized\parameterized.py", line 533, in standalone_func
+    return func(*(a + p.args), **p.kwargs)
+  File "D:\pythonProject\RequestTest\TestCase\LoginTest\test_login_params.py", line 34, in test_login
+    assertionuse(cls,login_resp,is_success,code,msg)#只有True表示真假，true表示字符串
+  File "D:\pythonProject\RequestTest\Common\assertion.py", line 6, in assertionuse
+    self.assertEqual(code,resp.json().get('code'))
+AssertionError: 99999 != 20001
+</pre>
+        </blockquote>
+    </div>
+    </td>
+</tr>
+
+                </tbody>
+                <tr id='total_row' class="text-center active">
+                    <td align="right">总计</td>
+                    <td>19</td>
+                    <td>18</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+	</fieldset>
+
+        <a href="#">
+    <ul class="layui-fixbar"><li class="layui-icon layui-fixbar-top" lay-type="top" style="display: list-item;"></li></ul>
+    </a>
+    
+        
+    <script type="text/javascript">
+        // 初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('chart1'));
+        var myChart2 = echarts.init(document.getElementById('chart2'));
+        // 指定图表的配置项和数据
+        option1 = {
+            tooltip: {
+                formatter: '{a} <br/>{b} : {c}%'
+            },
+            toolbox: {
+                feature: {
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            series: [{
+                name: '测试结果',
+                type: 'gauge',
+                detail: {
+                    formatter: '94.74%'
+                },
+                data: [{
+                    value: '94.74',
+                    name: '用例通过率'
+                }],
+                axisLine: {
+                    lineStyle: {
+                        color: [
+                            [0.2, '#c20000'],
+                            [0.8, '#ddb518'],
+                            [1, '#00a10a']
+                        ]
+                    }
+                }
+            }]
+        };
+        option2 = {
+            color: ['#00a10a', '#ddb518', 'rgba(204,46,41,0.73)', '#85898c'],
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b}: {c} ({d}%)'
+            },
+            legend: {
+                orient: 'vertical',
+                left: 10,
+                data: ['通过', '失败', '错误', '跳过']
+            },
+            series: [{
+                name: '测试结果',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [{
+                        value: 18,
+                        name: '通过'
+                    },
+                    {
+                        value: 1,
+                        name: '失败'
+                    },
+                    {
+                        value: 0,
+                        name: '错误'
+                    },
+                    {
+                        value: 0,
+                        name: '跳过'
+                    }
+                ]
+            }]
+        };
+
+        myChart1.setOption(option1);
+        myChart2.setOption(option2);
+    </script>
+    
+    </div>
+</body>
+</html>

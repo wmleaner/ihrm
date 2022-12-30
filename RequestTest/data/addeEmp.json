@@ -1,0 +1,16 @@
+[
+  {"desc": "纯数字用户名，添加失败","json": {"username": "56084", "mobile": "18395426302", "workNumber": "120123"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "纯字母用户名，添加失败","json": {"username": "wmwmw", "mobile": "18395426346", "workNumber": "12404535"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "数字+字母用户名，添加成功","json": {"username": "wmw122", "mobile": "18395426312", "workNumber": "1241123"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "1位数字工号，添加成功","json": {"username": "wm333", "mobile": "18395426322", "workNumber": "1"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "11位电话号码，添加成功","json": {"username": "wm455", "mobile": "18395426332", "workNumber": "1234567214"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "20位纯数字工号，添加成功","json": {"username": "5608qa4", "mobile": "18395426302", "workNumber": "12345678921467890214"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "添加username、mobile、workNumber，添加成功","json": {"username": "56we4", "mobile": "18395426372", "workNumber": "4556"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "添加全部参数，添加成功","json": {"username": "563k4", "mobile": "18395426302", "workNumber": "4556","timeOfEntry":"2017-11-03", "formOfEmployment":1,"departmentId" :1,"correctionTime":"2021-06-07"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "添加非唯一手机号，添加失败","json": {"username": "56ol4", "mobile": "18395426302", "workNumber": "45523326"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "填写入职时间晚于转正时间，添加失败","json": {"username": "56sd4", "mobile": "18395426392", "workNumber": "4348756","timeOfEntry":"2027-11-03","correctionTime":"2021-06-07"},"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "无必填参数，添加失败","json": null,"is_success":false,"code":20002,"message":"新增员工失败"},
+  {"desc": "少参数username,添加失败","json": {"username": null, "mobile": "18395426391", "workNumber": "5491"},"is_success":false,"code":20002,"message":"新增员工失败"}
+
+
+]
